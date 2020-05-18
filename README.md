@@ -14,11 +14,11 @@ Lazy Youtube is a webapp to pass the time while watching long, excruciating vide
 4. brew install ffmpeg
 
 You need to Provide few API keys either in `.env` or export them in shell. Namely
-FLASK_APP=server.py
-NLTK_DOWNLOAD='/Users/<somepath>/lazy-youtube/'
-GIPHY_KEY='<some-key>'
-REV_TOKEN='<some-token>'
+* FLASK_APP=server.py (optional)
+* NLTK_DOWNLOAD='/Users/somepath/lazy-youtube/'
+* GIPHY_KEY='some-key'
+* REV_TOKEN='some-token'
 
 To run application:
 1. npm start
-2. pipenv run flask run (in separate terminal)
+2. FLASK_APP=server.py flask run (in separate terminal)
