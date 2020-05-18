@@ -1,0 +1,11 @@
+__pycache__
+tokenizers
+node_modules
+*lock*
+*.mp*
+.DS_Store
+.env
+chunkers
+corpora
+stemmers
+taggers
