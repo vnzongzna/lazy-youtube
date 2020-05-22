@@ -14,6 +14,7 @@ nltk = "*"
 pytube3 = "*"
 flask-cors = "*"
 python-dotenv = "*"
+gensim = "*"
 
 [requires]
 python_version = "3.7"

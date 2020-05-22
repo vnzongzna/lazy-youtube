@@ -1,13 +1,14 @@
 import nltk
 import operator
 import sys
+import re
 import requests
 import os
 import pytube
 import subprocess
 import json
 import time
-from aylienapiclient import textapi
+import summary 
 from dotenv import load_dotenv
 from flask import Flask
 from flask import request
@@ -38,7 +39,7 @@ def urlToGifs():
         f.write(content)
         f.close()
     content.replace("\n", " ")
-    content.replace("Speaker ", "")
+    content = re.sub(r"Speaker\s\d+\s*\d+:\d*\s*","",content)
 
     gifs = []
     # 5 most common nounse from the text
@@ -47,7 +48,7 @@ def urlToGifs():
     gifs = getGifsFromKeyword(k1, 2)
 
     # key words from summry
-    k2 = getSmmryKeyWords(content, title, 5)
+    k2 = summary.GetKeyWords(content, title, 5)
     print(k2)
     gifs.extend(getGifsFromKeyword(k2, 2))
 
@@ -115,15 +116,6 @@ def downloadVideo(youtube_link):
         os.path.join(dest_file_name)
     ])
     return dest_file_name
-
-def getSmmryKeyWords(content, title, num_key_words):
-    client = textapi.Client("2dc2af81", "6c2e95f9bd981fc99ce0db592e19f480")
-    summary = client.Summarize({'title':title, 'text':content, 'sentences_number':num_key_words})['sentences']
-    words = getKeyWordsFromText(' '.join(summary), num_key_words)
-    result_key_words = ""
-    for w in words:
-        result_key_words += w + " "
-    return result_key_words
 
 def getKeyWordsFromText(content, num_key_words):
     text = nltk.word_tokenize(content)
