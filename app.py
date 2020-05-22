@@ -44,12 +44,10 @@ def urlToGifs():
     gifs = []
     # 5 most common nounse from the text
     k1 = getKeyWordsFromText(content, 5)
-    print(k1)
     gifs = getGifsFromKeyword(k1, 2)
 
     # key words from summry
     k2 = summary.GetKeyWords(content, title, 5)
-    print(k2)
     gifs.extend(getGifsFromKeyword(k2, 2))
 
     print(title)

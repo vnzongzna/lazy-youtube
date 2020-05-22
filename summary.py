@@ -14,4 +14,4 @@ if __name__ == "__main__":
     
     with  open(TEXT_FILE,"r") as fh:
         text = fh.read()
-    GetKeyWords(text, TEXT_FILE, SENTENCE_COUNT)
+    print(GetKeyWords(text, TEXT_FILE, SENTENCE_COUNT))
