@@ -9,7 +9,6 @@ pylint = "*"
 [packages]
 flask = "*"
 requests = "*"
-aylien-apiclient = "*"
 nltk = "*"
 pytube3 = "*"
 flask-cors = "*"

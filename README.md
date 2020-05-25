@@ -15,10 +15,14 @@ Lazy Youtube is a webapp to pass the time while watching long, excruciating vide
 
 You need to Provide few API keys either in `.env` or export them in shell. Namely
 * FLASK_APP=server.py (optional)
-* NLTK_DOWNLOAD='/Users/somepath/lazy-youtube/'
+* NLTK_DOWNLOAD='/Users/somepath/lazy-youtube/' (optional)
 * GIPHY_KEY='some-key'
 * REV_TOKEN='some-token'
 
 To run application:
 1. npm start
 2. FLASK_APP=server.py flask run (in separate terminal)
+
+OR if you have docker installed you don't have to intall any dependencies and run following in separate terminal
+1. docker run -ti --rm -p 3000:3000 vaibahvk5/lazy-front
+2. docker run -ti --rm -p 5000:5000 --env-file=.env vaibhavk5/lazy-back
