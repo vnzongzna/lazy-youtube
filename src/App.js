@@ -14,7 +14,7 @@ import Typography from '@material-ui/core/Typography';
 class App extends Component {
   
   submitUrl(){
-    console.log('IM DOING SOMETHING');
+    console.log('Processing Video');
     if(this.props.youtube_url === ""){
       alert('Please use a valid youtube link');
     }
@@ -47,7 +47,7 @@ class App extends Component {
       return (
         <div>
            <Typography variant="display2" gutterBottom>
-            TOO LONG; DIDN'T WATCH
+            Youtube Video Summarizer
           </Typography>
           <Typography variant="headline" gutterBottom>
             Enter a YouTube link to get started!
@@ -67,7 +67,7 @@ class App extends Component {
     return (
       <div>
         <Typography variant="display2" gutterBottom>
-          TOO LONG; DIDN'T WATCH
+          Youtube Video Summarizer
         </Typography>
         <Typography variant="headline" gutterBottom>
           {this.props.title}
@@ -128,7 +128,7 @@ class App extends Component {
           <Toolbar>
             
             <Typography variant="title" color="inherit">
-              TL;DW
+              Lazy Youtube
             </Typography>
             
           </Toolbar>
